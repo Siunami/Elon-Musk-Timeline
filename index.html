@@ -232,6 +232,7 @@
 
 		</div><!-- /#timeline -->
 		<br>
+		<!--
 	<div class = "references">
 		<p id = "section1">1. https://qph.is.quoracdn.net/main-qimg-ccd4ee8db048745645a294918428fef8?convert_to_webp=true</p>
 		<p id = "section2">2. http://www.queensu.ca/mc_administrator/sites/default/files/assets/pages/QueensLogo_colour.jpg</p>
@@ -241,7 +242,73 @@
 		<p id = "section6">6. https://www.flickr.com/photos/alabut/4276454889</p>
 		<p id = "section7">7. https://en.wikipedia.org/wiki/Solar_power_in_Maine#/media/File:As_solar_firmengebaude.jpg</p>
 		<p id = "section8">8. https://upload.wikimedia.org/wikipedia/commons/2/28/Artificial-intelligence-elon-musk-hawking.jpg</p>
+	</div>-->
+	
+	<div id="listContainer">
+		<ul id="expList">
+			<li>References
+			<ul>
+				<li id = "section1">[1]
+				<ul>
+					<li>
+					<span><a href = "https://qph.is.quoracdn.net/main-qimg-ccd4ee8db048745645a294918428fef8?convert_to_webp=true">https://qph.is.quoracdn.net/main-qimg-ccd4ee8db048745645a294918428fef8?convert_to_webp=true</a></span>
+					</li>
+				</ul>
+				</li>
+				<li id = "section2">[2]
+				<ul>
+					<li>
+					<span><a href = "http://www.queensu.ca/mc_administrator/sites/default/files/assets/pages/QueensLogo_colour.jpg">http://www.queensu.ca/mc_administrator/sites/default/files/assets/pages/QueensLogo_colour.jpg</a></span>
+					</li>
+				</ul>
+				</li>
+				<li id = "section3">[3]
+				<ul>
+					<li>
+					<span><a href = "http://www.mdv.com/sites/default/files/zip_small_0.jpg">http://www.mdv.com/sites/default/files/zip_small_0.jpg</a></span>
+					</li>
+				</ul>
+				</li>
+				<li id = "section4">[4]
+				<ul>
+					<li>
+					<span><a href = "https://pixabay.com/static/uploads/photo/2015/05/26/09/37/paypal-784404_960_720.png">https://pixabay.com/static/uploads/photo/2015/05/26/09/37/paypal-784404_960_720.png</a></span>
+					</li>
+				</ul>
+				</li>
+				<li id = "section5">[5]
+				<ul>
+					<li>
+					<span><a href = "https://writeredpendotcom.files.wordpress.com/2016/01/spacex-5.jpg?w=3000&h=2000">https://writeredpendotcom.files.wordpress.com/2016/01/spacex-5.jpg?w=3000&h=2000</a></span>
+					</li>
+				</ul>
+				</li>
+				<li id = "section6">[6]
+				<ul>
+					<li>
+					<span><a href = "https://www.flickr.com/photos/alabut/4276454889">https://www.flickr.com/photos/alabut/4276454889</a></span>
+					</li>
+				</ul>
+				</li>
+				<li id = "section7">[7]
+				<ul>
+					<li>
+					<span><a href = "https://en.wikipedia.org/wiki/Solar_power_in_Maine#/media/File:As_solar_firmengebaude.jpg"> https://en.wikipedia.org/wiki/Solar_power_in_Maine#/media/File:As_solar_firmengebaude.jpg</a></span>
+					</li>
+				</ul>
+				</li>
+				<li id = "section8">[8]
+				<ul>
+					<li>
+					<span><a href = "https://upload.wikimedia.org/wikipedia/commons/2/28/Artificial-intelligence-elon-musk-hawking.jpg">https://upload.wikimedia.org/wikipedia/commons/2/28/Artificial-intelligence-elon-musk-hawking.jpg</a></span>
+					</li>
+				</ul>
+				</li>
+			</ul>
+			</li>
+		</ul>
 	</div>
+	
     <!-- Footer -->
     <footer>
 		<center>
@@ -283,6 +350,23 @@
 				timelineContainer:'#timeline',
 			});
 			$('.venobox').venobox();
+		});
+		
+		function prepareList() {
+		$('#expList').find('li:has(ul)')
+			.click( function(event) {
+				if (this == event.target) {
+					$(this).toggleClass('expanded');
+					$(this).children('ul').toggle('medium');
+				}
+				return false;
+			})
+			.addClass('collapsed')
+			.children('ul').hide();
+		};
+		
+		$(document).ready( function() {
+			prepareList();
 		});
 
 	</script>
